@@ -1,0 +1,190 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#ifndef APSTUDIO_INVOKED
+#include "targetver.h"
+#endif
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Russian (Russia) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_RUS)
+LANGUAGE LANG_RUSSIAN, SUBLANG_DEFAULT
+#pragma code_page(1251)
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#ifndef APSTUDIO_INVOKED\r\n"
+    "#include ""targetver.h""\r\n"
+    "#endif\r\n"
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#include ""res\\Gui.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""     // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\gui_vmm.ico"
+#endif    // Russian (Russia) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (United States) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_GUI_DIALOG DIALOGEX 0, 0, 384, 152
+STYLE DS_SETFONT | DS_CENTER | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_OVERLAPPEDWINDOW | WS_EX_CONTROLPARENT | WS_EX_APPWINDOW
+FONT 8, "Microsoft Sans Serif", 400, 0, 0x0
+BEGIN
+    EDITTEXT        GUI_VMM_EDIT_FILE_NAME,64,21,254,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "...",GUI_VMM_BTN_FILEPATH,322,21,41,14
+    PUSHBUTTON      "ADD&&START&&OPEN",GUI_VMM_BTN_ADDSTARTOPEN,78,39,83,14
+    PUSHBUTTON      "CLOSE&&STOP&&REMOVE",GUI_VMM_BTN_CLOSESTOPREMOVE,181,39,87,14
+    GROUPBOX        "HYP on CPU #1",GUI_VMM_STC_GET_STATE_CPU0,10,66,127,79
+    PUSHBUTTON      "Get State",GUI_VMM_BTN_GET_STATE_CPU0,78,110,50,14
+    PUSHBUTTON      "Load HYP",GUI_VMM_BTN_RUNVMM0,17,110,50,14
+    PUSHBUTTON      "Unload HYP",GUI_VMM_BTN_STOPVMM0,17,126,50,14
+    PUSHBUTTON      "Set delta",GUI_VMM_BTN_SET_DELTA,78,81,50,14
+    EDITTEXT        GUI_VMM_EDIT_SET_DELTA,19,81,45,14,ES_AUTOHSCROLL
+    LISTBOX         GUI_VMM_LIST_LOG,141,70,236,75,LBS_SORT | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_HSCROLL | WS_TABSTOP
+    LTEXT           "Driver's path",IDC_STATIC,17,24,40,8
+    GROUPBOX        "HYP driver control",IDC_STATIC,11,8,363,50
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904e4"
+        BEGIN
+            VALUE "CompanyName", "CompanyName"
+            VALUE "FileDescription", "FileDescription"
+            VALUE "FileVersion", "1.0.0.1"
+            VALUE "InternalName", "Gui.exe"
+            VALUE "LegalCopyright", "LegalCopyright(c).  All rights reserved."
+            VALUE "OriginalFilename", "OriginalFilename.exe"
+            VALUE "ProductName", "ProductName"
+            VALUE "ProductVersion", "1.0.0.1"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1252
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_GUI_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 2
+        RIGHTMARGIN, 381
+        TOPMARGIN, 2
+        BOTTOMMARGIN, 149
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // English (United States) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#include "res\gui_vmm.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"     // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

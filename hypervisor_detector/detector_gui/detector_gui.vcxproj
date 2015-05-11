@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{5DAA3856-FF17-4EA8-AA89-FB825983EF6E}</ProjectGuid>
+    <RootNamespace>detector_gui</RootNamespace>
+    <Keyword>MFCProj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>Static</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>Static</UseOfMfc>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(BIN)\</OutDir>
+    <IntDir>$(BIN)\$(Configuration)\$(ProjectName)\</IntDir>
+    <GenerateManifest>false</GenerateManifest>
+    <EmbedManifest>true</EmbedManifest>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(BIN)\</OutDir>
+    <IntDir>$(BIN)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;GUI;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(LIB);$(WDKPATH)\lib\win7\i386;</AdditionalLibraryDirectories>
+      <AdditionalDependencies>
+      </AdditionalDependencies>
+      <IgnoreSpecificDefaultLibraries>
+      </IgnoreSpecificDefaultLibraries>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);$(BIN);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Manifest>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Manifest>
+    <Manifest>
+      <VerboseOutput>true</VerboseOutput>
+      <EnableDPIAwareness>true</EnableDPIAwareness>
+    </Manifest>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <AdditionalIncludeDirectories>..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>$(LIB);$(WDKPATH)\lib\win7\i386;</AdditionalLibraryDirectories>
+      <AdditionalDependencies>
+      </AdditionalDependencies>
+      <IgnoreSpecificDefaultLibraries>
+      </IgnoreSpecificDefaultLibraries>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);$(BIN);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+    <None Include="res\vmmkar_gui.ico" />
+    <None Include="res\vmmkar_gui.rc2" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\shared\common_vmmkar.h" />
+    <ClInclude Include="measuring_trace.h" />
+    <ClInclude Include="service_functions.h" />
+    <ClInclude Include="vmmkar_gui.h" />
+    <ClInclude Include="vmmkar_guidlg.h" />
+    <ClInclude Include="print.h" />
+    <ClInclude Include="ReportCtrl.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\shared\common_vmmkar.cpp" />
+    <ClCompile Include="measuring_trace.cpp" />
+    <ClCompile Include="service_functions.cpp" />
+    <ClCompile Include="vmmkar_gui.cpp" />
+    <ClCompile Include="vmmkar_guidlg.cpp" />
+    <ClCompile Include="print.cpp" />
+    <ClCompile Include="ReportCtrl.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="vmmkar_gui.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties RESOURCE_FILE="vmmkar_gui.rc" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

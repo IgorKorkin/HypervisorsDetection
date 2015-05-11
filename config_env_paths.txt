@@ -1,0 +1,7 @@
+Hi!
+
+You must set these paths in environment variables to build solution:
+
+BIN = eg D:\bin
+LIB = eg D:\lib
+WDKPATH = eg C:\WinDDK\7600.16385.1

@@ -1,0 +1,314 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="phymem.cpp" />
+    <ClCompile Include="raiseirql.cpp" />
+    <ClCompile Include="timing_rdtsc.cpp" />
+    <ClCompile Include="detector_driver.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="cache.h" />
+    <ClInclude Include="phymem.h" />
+    <ClInclude Include="detector_driver.h" />
+    <ClInclude Include="raiseirql.h" />
+    <ClInclude Include="timing_rdtsc.h" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>detector_driver</ProjectName>
+    <ProjectGuid>{F5590D62-44B1-4855-9F02-96E986937F30}</ProjectGuid>
+    <RootNamespace>detector_driver</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>NotSet</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>NotSet</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>NotSet</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>NotSet</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(BIN)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(BIN)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</IgnoreImportLibrary>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)bin\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(OutDir)$(ProjectName)\$(Configuration)$(Platform)\</IntDir>
+    <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</IgnoreImportLibrary>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(BIN)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(BIN)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</IgnoreImportLibrary>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)bin\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OutDir)$(ProjectName)\$(Configuration)$(Platform)\</IntDir>
+    <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</IgnoreImportLibrary>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</GenerateManifest>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|x64'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|x64'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|x64'" />
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectName)</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.sys</TargetExt>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectName)</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.sys</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..;$(WDKPATH)\inc\ddk;$(WDKPATH)\inc\api;$(WDKPATH)\inc\crt;</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>DBG;DEBUG;_DEBUG;_X86_;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <StructMemberAlignment>8Bytes</StructMemberAlignment>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <FloatingPointModel>Precise</FloatingPointModel>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CallingConvention>StdCall</CallingConvention>
+      <OmitDefaultLibName>true</OmitDefaultLibName>
+    </ClCompile>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+    <Link>
+      <AdditionalOptions>/safeseh:no %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>ntoskrnl.lib;int64.lib;hal.lib;msvcrt.lib</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <AdditionalLibraryDirectories>$(WDKPATH)\lib\win7\i386;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <EnableUAC>false</EnableUAC>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Native</SubSystem>
+      <Driver>Driver</Driver>
+      <LinkTimeCodeGeneration>
+      </LinkTimeCodeGeneration>
+      <EntryPointSymbol>DriverEntry</EntryPointSymbol>
+      <RandomizedBaseAddress>
+      </RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <TargetMachine>MachineX86</TargetMachine>
+      <AllowIsolation>true</AllowIsolation>
+      <ProgramDatabaseFile>$(IntDir)\$(ProjectName).pdb</ProgramDatabaseFile>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Midl>
+      <TargetEnvironment>X64</TargetEnvironment>
+    </Midl>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>C:\WinDDK\7600.16385.0\inc\ddk;C:\WinDDK\7600.16385.0\inc\api;C:\WinDDK\7600.16385.0\inc\crt;$(ProjectDir)Common;$(SolutionDir)Shared</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>DBG; DEBUG; _DEBUG; WIN64; _WIN64; _M_AMD64; _AMD_64_;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <StructMemberAlignment>8Bytes</StructMemberAlignment>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <FloatingPointModel>Precise</FloatingPointModel>
+      <ForceConformanceInForLoopScope>false</ForceConformanceInForLoopScope>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CallingConvention>StdCall</CallingConvention>
+      <OmitDefaultLibName>true</OmitDefaultLibName>
+    </ClCompile>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+    <Link>
+      <AdditionalOptions>/safeseh:no %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>ntoskrnl.lib;int64.lib;hal.lib;msvcrt.lib</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(ProjectName)$(Configuration)$(Platform).sys</OutputFile>
+      <AdditionalLibraryDirectories>C:\WinDDK\3790.1830\lib\wnet\amd64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <EnableUAC>false</EnableUAC>
+      <IgnoreAllDefaultLibraries>true</IgnoreAllDefaultLibraries>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Native</SubSystem>
+      <Driver>Driver</Driver>
+      <LinkTimeCodeGeneration>
+      </LinkTimeCodeGeneration>
+      <EntryPointSymbol>DriverEntry</EntryPointSymbol>
+      <RandomizedBaseAddress>
+      </RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <TargetMachine>MachineX64</TargetMachine>
+      <AllowIsolation>true</AllowIsolation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <AdditionalIncludeDirectories>..;$(WDKPATH)\inc\ddk;$(WDKPATH)\inc\api;$(WDKPATH)\inc\crt;</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_X86_;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <IgnoreStandardIncludePath>true</IgnoreStandardIncludePath>
+      <StringPooling>true</StringPooling>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <StructMemberAlignment>8Bytes</StructMemberAlignment>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <ForceConformanceInForLoopScope>false</ForceConformanceInForLoopScope>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CallingConvention>StdCall</CallingConvention>
+      <OmitDefaultLibName>true</OmitDefaultLibName>
+    </ClCompile>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+    <Link>
+      <AdditionalOptions>/safeseh:no %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>ntoskrnl.lib;int64.lib;hal.lib;msvcrt.lib</AdditionalDependencies>
+      <ShowProgress>NotSet</ShowProgress>
+      <OutputFile>$(OutDir)\$(TargetFileName)</OutputFile>
+      <AdditionalLibraryDirectories>$(WDKPATH)\lib\win7\i386;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <EnableUAC>false</EnableUAC>
+      <IgnoreAllDefaultLibraries>true</IgnoreAllDefaultLibraries>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Native</SubSystem>
+      <Driver>Driver</Driver>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <LinkTimeCodeGeneration>
+      </LinkTimeCodeGeneration>
+      <EntryPointSymbol>DriverEntry</EntryPointSymbol>
+      <RandomizedBaseAddress>
+      </RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <TargetMachine>MachineX86</TargetMachine>
+      <AllowIsolation>true</AllowIsolation>
+      <ProgramDatabaseFile>$(IntDir)\$(ProjectName).pdb</ProgramDatabaseFile>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Midl>
+      <TargetEnvironment>X64</TargetEnvironment>
+    </Midl>
+    <ClCompile>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <AdditionalIncludeDirectories>C:\WinDDK\7600.16385.0\inc\ddk;C:\WinDDK\7600.16385.0\inc\api;C:\WinDDK\7600.16385.0\inc\crt;$(ProjectDir)Common;$(SolutionDir)Shared</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN64; _WIN64; _M_AMD64; _AMD_64_;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <IgnoreStandardIncludePath>true</IgnoreStandardIncludePath>
+      <StringPooling>true</StringPooling>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <StructMemberAlignment>8Bytes</StructMemberAlignment>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <ForceConformanceInForLoopScope>false</ForceConformanceInForLoopScope>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CallingConvention>StdCall</CallingConvention>
+      <OmitDefaultLibName>true</OmitDefaultLibName>
+    </ClCompile>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+    <Link>
+      <AdditionalOptions>/safeseh:no %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>ntoskrnl.lib;int64.lib;hal.lib;msvcrt.lib</AdditionalDependencies>
+      <ShowProgress>NotSet</ShowProgress>
+      <OutputFile>$(OutDir)$(ProjectName)$(Configuration)$(Platform).sys</OutputFile>
+      <AdditionalLibraryDirectories>C:\WinDDK\3790.1830\lib\wnet\amd64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <EnableUAC>false</EnableUAC>
+      <IgnoreAllDefaultLibraries>true</IgnoreAllDefaultLibraries>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Native</SubSystem>
+      <Driver>Driver</Driver>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <LinkTimeCodeGeneration>
+      </LinkTimeCodeGeneration>
+      <EntryPointSymbol>DriverEntry</EntryPointSymbol>
+      <RandomizedBaseAddress>
+      </RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <TargetMachine>MachineX64</TargetMachine>
+      <AllowIsolation>true</AllowIsolation>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
